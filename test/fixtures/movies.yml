@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: movie1
+  release_date: 2014-02-27
+  description: movie released in 2014
+
+two:
+  title: movie2
+  release_date: 2015-02-27
+  description: movie released in 2014

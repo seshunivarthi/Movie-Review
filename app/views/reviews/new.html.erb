@@ -1,0 +1,25 @@
+<%= form_for(:review, url: movie_reviews_path(@movie), html: { :class => "form-horizontal"}) do |f|  %>
+<h1> Add a review for <%= @movie.title %> </h1>
+
+<div class="form-group">
+	<%= f.label "Rating", :class => "col-sm-2 control-label" %>
+	<%= f.select :rating, [1,2,3,4,5] %>
+</div>
+
+<div class="form-group">
+	<%= f.label "Date Watched", :class => "col-sm-2 control-label" %>
+	<%= f.text_field :date_watched %>
+</div>
+
+<div class="form-group">
+	<%= f.label "Comments", :class => "col-sm-2 control-label" %>
+	<%= f.text_area :review %>
+</div>
+
+<div class="form-group">
+	<div class="col-sm-offset-2  col-sm-2">
+		<%= f.submit "Add", :class => "btn btn-primary" %>
+	</div>
+</div>
+
+<% end -%>

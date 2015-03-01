@@ -1,0 +1,32 @@
+<div class="row">
+	<div class="page-header">
+		<ol class="breadcrumb">
+		<li> <%= link_to "Movies", movies_path %> </li>
+		<li class="active"> <%= @movie.title %> </li>
+		<li> <small>
+			<%= link_to "Add a Review", new_movie_review_path(@movie), :class => "btn btn-primary" %>
+			</small>
+		</li>
+		</ol>
+	</div>
+</div>
+
+<div class="row">
+<table class="table">
+	<thead>
+		<th> Rating </th>
+		<th> Date Watched </th>
+		<th> Comments </th>
+	</thead>
+
+	<tbody>
+		<% @movie.reviews.each do |r|  -%>
+			<tr>
+				<td> <%= r.rating %> </td>
+				<td> <%= r.date_watched %> </td>
+				<td> <%= r.review %> </td>
+			</tr>
+		<% end -%>
+	</tbody>
+</table>
+</div>

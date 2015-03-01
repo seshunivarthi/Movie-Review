@@ -1,0 +1,27 @@
+<div class="page-header">
+<h1> List of Movies </h1>
+<div class="col-sm-offset-10">
+ <%= link_to "Add a Movie", new_movie_path, :class => "btn btn-primary" %>
+</div>
+
+<div class="row">
+	<table class="table">
+	<thead>
+		<th> Title </th>
+		<th> Release Date </th>
+		<th> Description </th>
+		<th> Review </th>
+	</thead>
+
+	<tbody>
+		<% @movies.each do |m|  -%>
+			<tr>
+				<td> <span class="movie title"><%= m.title %></span> </td>
+				<td> <%= m.release_date %> </td>
+				<td> <%= truncate(m.description, length: 300) %> </td>
+				<td> <%= link_to "#{m.reviews.size}", movie_reviews_path(m) %> </td>
+			</tr>
+		<% end -%>
+	</tbody>
+
+</div>
